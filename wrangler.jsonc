@@ -7,9 +7,9 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "biblioteca-db"
+      "database_name": "biblioteca-db",
       // Antes do deploy, adicione aqui o ID gerado pelo "wrangler d1 create":
-      // "database_id": "COLE-AQUI-O-ID"
+      "database_id": "e0b16184-07d5-49bf-aecb-98f08c7efb92"
     }
   ]
 }
