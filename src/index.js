@@ -6,6 +6,15 @@ import express from "express";
 const app = express();
 app.use(express.json());
 
+// CORS: permite que um site (o front-end) chame esta API pelo navegador
+app.use((req, res, next) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
 // Verifica se a API está no ar
 app.get("/health", (req, res) => {
   res.json({ status: "ok" });
